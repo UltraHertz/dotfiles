@@ -1,0 +1,52 @@
+!! James F <m@jef.me.uk>
+
+!! X cursor
+Xcursor.theme: Vanilla-DMZ
+Xcursor.size:  16
+
+!! dzen2
+dzen2.font:       xft: Terminus:style=Regular:size=8
+dzen2.foreground: #22EE11
+dzen2.background: black
+
+!! X.org
+Xft*dpi: 96
+Xft*antialias: true
+Xft*hinting: full
+
+!! urxvt
+URxvt*scrollBar: false
+URxvt*scrollWithBuffer: true
+
+URxvt.colorUL: #4682B4
+
+URxvt.perl-ext: default,url-select,selection-to-clipboard
+URxvt.keysym.M-u: perl:url-select:select_next
+URxvt.url-select.launcher: /usr/bin/firefox
+URxvt.url-select.underline: true
+
+URxvt*font: xft: Terminus:style=Regular:size=8
+
+URxvt.depth:      32
+URxvt.transparent: true
+URxvt.shading:   40
+
+URxvt.foreground: #FFFFFF
+URxvt.background: #212121
+
+URxvt.color0:     #2E3436
+URxvt.color1:     #CC0000
+URxvt.color2:     #4E9A06
+URxvt.color3:     #C4A000
+URxvt.color4:     #3465A4
+URxvt.color5:     #75507B
+URxvt.color6:     #06989A
+URxvt.color7:     #D3D7CF
+URxvt.color8:     #555753
+URxvt.color9:     #EF2929
+URxvt.color10:    #8AE234
+URxvt.color11:    #FCE94F
+URxvt.color12:    #729FCF
+URxvt.color13:    #AD7FA8
+URxvt.color14:    #34E2E2
+URxvt.color15:    #EEEEEC
