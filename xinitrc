@@ -11,7 +11,7 @@ if [ -d /etc/X11/xinit/xinitrc.d ]; then
 fi
 
 xsetroot -solid "#80a0af"
-feh --bg-scale "$HOME/.config/wallpaper.jpg"
+feh --bg-center "$HOME/.config/wallpaper.png"
 
 SSH_CONFIG="$HOME/.ssh/config"
 SSH_RSA="$HOME/.ssh/id_rsa"
@@ -40,8 +40,7 @@ setxkbmap -option "terminate:ctrl_alt_bksp"
 #setxkbmap -option "compose:ralt"
 
 #xbacklight -set 65%
-#unclutter -noevents -idle 3 &
-
+unclutter -grab 
 urxvtd -f -o -q
 
 #autocutsel -fork
@@ -58,22 +57,24 @@ wmname LG3D
 
 #exec $HOME/bin/dwm-start
 
-while true
-do
-  VOL=$(amixer get Master | tail -1 | sed 's/.*\[\([0-9]*%\)\].*/\1/')
-  LOCALTIME=$(date +%Z\=%Y-%m-%dT%H:%M)
-  OTHERTIME=$(TZ=Europe/London date +%Z\=%H:%M)
-  IP=$(for i in `ip r`; do echo $i; done | grep -A 1 src | tail -n1) # can get confused if you use vmware
-  TEMP="$(($(cat /sys/class/thermal/thermal_zone0/temp) / 1000))C"
+# while true
+# do
+#   VOL=$(amixer get Master | tail -1 | sed 's/.*\[\([0-9]*%\)\].*/\1/')
+#   LOCALTIME=$(date +%Z\=%Y-%m-%dT%H:%M)
+#   OTHERTIME=$(TZ=Europe/London date +%Z\=%H:%M)
+#   IP=$(for i in `ip r`; do echo $i; done | grep -A 1 src | tail -n1) # can get confused if you use vmware
+#   TEMP="$(($(cat /sys/class/thermal/thermal_zone0/temp) / 1000))C"
 
-if acpi -a | grep off-line > /dev/null 
-then
-  BAT="Bat. $(acpi -b | awk '{ print $4 " " $5 }' | tr -d ',')"
-  xsetroot -name "$IP $BAT $VOL $TEMP $LOCALTIME $OTHERTIME"
-else
-  xsetroot -name "$IP $VOL $TEMP $LOCALTIME $OTHERTIME"
-fi
-sleep 20s
-done &
+# if acpi -a | grep off-line > /dev/null 
+# then
+#   BAT="Bat. $(acpi -b | awk '{ print $4 " " $5 }' | tr -d ',')"
+#   xsetroot -name "$IP $BAT $VOL $TEMP $LOCALTIME $OTHERTIME"
+# else
+#   xsetroot -name "$IP $VOL $TEMP $LOCALTIME $OTHERTIME"
+# fi
+# sleep 20s
+# done &
 
-exec dwm
+# exec dwm
+
+exec xmonad
