@@ -13,3 +13,6 @@
 [submodule "dwm"]
 	path = dwm
 	url = git@github.com:ultrahertz/dwm-jamesf.git
+[submodule "dotemacs"]
+	path = dotemacs
+	url = git@github.com:ultrahertz/dotemacs.git
